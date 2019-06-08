@@ -28,7 +28,7 @@ export const FeedbackForm: React.FC = () => {
     if (state.eventDate === undefined)
       return;
 
-    await feedbackService.createFeedback({ ...state, eventDate: state.eventDate });
+    await feedbackService.createFeedback({ ...state, firstDateSaw: state.eventDate });
 
     dispatch({ type: 'RESET' });
   };

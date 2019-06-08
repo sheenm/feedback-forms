@@ -11,7 +11,7 @@ declare module 'app/dto' {
    */
   interface IFeedbackRequest {
     nickname: string
-    eventDate: Date
+    firstDateSaw: Date
     email: string
     isWantsReceiveNewsletter: boolean
     whatLikesMore: number

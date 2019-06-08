@@ -6,9 +6,9 @@ declare module 'app/businessObjects' {
   interface IFeedback {
     id: string
     nickname: string
-    eventDate: string
-    whatLikesMore: number
-    overallSatisfaction: number
+    firstDateSaw: string
+    whatLikesMore: string
+    overallSatisfaction: string
   }
 
   /**

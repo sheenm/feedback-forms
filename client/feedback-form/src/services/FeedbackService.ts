@@ -16,16 +16,16 @@ export class FeedbackService {
       {
         id: '1',
         nickname: 'Mike',
-        eventDate: new Date().toISOString(),
-        whatLikesMore: 1,
-        overallSatisfaction: 5
+        firstDateSaw: new Date().toLocaleDateString(),
+        whatLikesMore: 'Backend',
+        overallSatisfaction: 'Good'
       },
       {
         id: '2',
         nickname: 'Adam',
-        eventDate: new Date().toISOString(),
-        whatLikesMore: 2,
-        overallSatisfaction: 4
+        firstDateSaw: new Date().toLocaleDateString(),
+        whatLikesMore: 'Front',
+        overallSatisfaction: 'Normal'
       }
     ]);
   }
