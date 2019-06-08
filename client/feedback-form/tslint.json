@@ -11,6 +11,7 @@
     "object-literal-sort-keys": false,
     "jsx-boolean-value": false,
     "curly": false,
+    "semicolon": true,
     "no-consecutive-blank-lines": true,
     "no-any": true,
     "no-empty-interface": false,

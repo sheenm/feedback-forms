@@ -1,15 +1,8 @@
+import { App } from 'components/App';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './scss/index.scss';
 import * as serviceWorker from './serviceWorker';
-
-/**
- * Application component
- */
-export const App: React.FC = () => {
-
-    return <h1>hello world</h1>
-}
-
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
