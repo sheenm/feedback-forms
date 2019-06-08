@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedbackFormWeb", "FeedbackFormsWeb\FeedbackFormWeb.csproj", "{6B2E6115-B686-420C-844A-5A4F7258EDB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedbackForm.Web", "FeedbackFormsWeb\FeedbackForm.Web.csproj", "{6B2E6115-B686-420C-844A-5A4F7258EDB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
