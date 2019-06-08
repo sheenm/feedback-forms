@@ -2,7 +2,7 @@ import { neverReached } from "utils/NeverReached";
 
 interface IState {
   nickname: string;
-  eventDate: Date | undefined;
+  firstDateSaw: Date | undefined;
   email: string;
   isWantsReceiveNewsletter: boolean;
   whatLikesMore: number;
@@ -53,7 +53,7 @@ export const feedbackFormReducer = (state: IState, action: ActionTypes): IState 
     case 'CHANGE_EMAIL':
       return { ...state, email: action.email };
     case 'CHANGE_EVENTDATE':
-      return { ...state, eventDate: action.date };
+      return { ...state, firstDateSaw: action.date };
     case 'CHANGE_NICKNAME':
       return { ...state, nickname: action.nickname };
     case 'CHANGE_OVERALL_SATISFACTION':
@@ -65,7 +65,7 @@ export const feedbackFormReducer = (state: IState, action: ActionTypes): IState 
     case 'RESET':
       return {
         email: '',
-        eventDate: undefined,
+        firstDateSaw: undefined,
         isWantsReceiveNewsletter: true,
         nickname: '',
         overallSatisfaction: 0,

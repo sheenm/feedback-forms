@@ -1,5 +1,6 @@
 import { RouteComponentProps } from '@reach/router';
 import { IStaticRoute } from 'app/routes';
+import { Feedbacks } from 'components/feedback/Feedbacks';
 import React from 'react';
 
 /**
@@ -15,7 +16,5 @@ export const indexRoute: IStaticRoute = {
  */
 export const IndexPage: React.FC<RouteComponentProps> = () => {
 
-  return <div>
-    Index page contents
-  </div>;
+  return <Feedbacks />;
 };
