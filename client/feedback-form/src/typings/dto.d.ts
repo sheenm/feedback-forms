@@ -1,8 +1,4 @@
 declare module 'app/dto' {
-
-  /**
-   * text, drop-down, date, radio, check box.
-   */
   /**
    * Feedback Response
    */
@@ -15,10 +11,18 @@ declare module 'app/dto' {
    */
   interface IFeedbackRequest {
     nickname: string
-    eventDate: string
+    eventDate: Date
     email: string
     isWantsReceiveNewsletter: boolean
     whatLikesMore: number
     overallSatisfaction: number
+  }
+
+  /**
+   * Provides Dictionary Item Response (server side enums)
+   */
+  interface IDictionaryItemResponse {
+    key: number | string
+    value: string
   }
 }

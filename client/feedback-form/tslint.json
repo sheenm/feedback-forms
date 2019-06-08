@@ -50,7 +50,7 @@
     "restrict-plus-operands": true,
     "cyclomatic-complexity": [
       true,
-      6
+      8
     ],
     "deprecation": true,
     "max-file-line-count": [
@@ -70,7 +70,7 @@
         ".ts": "pascal-case"
       }
     ],
-    "interface-over-type-literal": true,
+    "interface-over-type-literal": false,
     "no-parameter-properties": true,
     "no-unnecessary-callback-wrapper": true,
     "no-unnecessary-initializer": true,
