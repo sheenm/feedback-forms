@@ -1,5 +1,6 @@
 import { RouteComponentProps } from '@reach/router';
 import { IStaticRoute } from 'app/routes';
+import { FeedbackForm } from 'components/feedback/FeedbackForm';
 import React from 'react';
 
 /**
@@ -15,7 +16,5 @@ export const sendFeedbackRoute: IStaticRoute = {
  */
 export const SendFeedbackPage: React.FC<RouteComponentProps> = () => {
 
-  return <div>
-    On this page there will be a feedback form
-  </div>;
+  return <FeedbackForm />;
 };

@@ -10,4 +10,12 @@ declare module 'app/businessObjects' {
     whatLikesMore: number
     overallSatisfaction: number
   }
+
+  /**
+   * Provides Dictionary Item
+   */
+  interface IDictionaryItem {
+    key: number | string
+    value: string
+  }
 }
