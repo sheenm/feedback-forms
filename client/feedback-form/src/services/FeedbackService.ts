@@ -14,10 +14,18 @@ export class FeedbackService {
   public getAllFeedbacks(): Promise<IFeedback[]> {
     return Promise.resolve([
       {
+        id: '1',
         nickname: 'Mike',
         eventDate: new Date().toISOString(),
         whatLikesMore: 1,
         overallSatisfaction: 5
+      },
+      {
+        id: '2',
+        nickname: 'Adam',
+        eventDate: new Date().toISOString(),
+        whatLikesMore: 2,
+        overallSatisfaction: 4
       }
     ]);
   }
