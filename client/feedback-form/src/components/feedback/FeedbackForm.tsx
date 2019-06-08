@@ -15,7 +15,7 @@ export const FeedbackForm: React.FC = () => {
 
   const [state, dispatch] = useReducer(feedbackFormReducer, {
     email: '',
-    eventDate: undefined,
+    firstDateSaw: undefined,
     isWantsReceiveNewsletter: true,
     nickname: '',
     overallSatisfaction: 0,
@@ -25,10 +25,10 @@ export const FeedbackForm: React.FC = () => {
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (state.eventDate === undefined)
+    if (state.firstDateSaw === undefined)
       return;
 
-    await feedbackService.createFeedback({ ...state, firstDateSaw: state.eventDate });
+    await feedbackService.createFeedback({ ...state, firstDateSaw: state.firstDateSaw });
 
     dispatch({ type: 'RESET' });
   };
@@ -66,7 +66,7 @@ export const FeedbackForm: React.FC = () => {
         id: 'dateSawInput',
         required: true
       }}
-      value={state.eventDate}
+      value={state.firstDateSaw}
       onChange={changeDate}
     />
 
