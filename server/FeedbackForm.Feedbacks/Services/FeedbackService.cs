@@ -5,21 +5,21 @@ using FeedbackForm.Services.Responses;
 
 namespace FeedbackForm.Feedbacks.Services
 {
-	/// <summary>
-	/// Service to work with Feedback objects
-	/// </summary>
-	public class FeedbackService : IFeedbackService
+    /// <summary>
+    /// Service to work with Feedback objects
+    /// </summary>
+    public class FeedbackService : IFeedbackService
     {
         /// <summary>
         /// Gets all feedbacks.
         /// </summary>
         public async Task<ServiceResponse<IEnumerable>> GetAllFeedbacks()
         {
-			// Temporary while did not implemented any logic
-			await Task.CompletedTask;
+            // Temporary while did not implemented any logic
+            await Task.CompletedTask;
 
-			return new List<object>();
-		}
+            return new List<object>();
+        }
 
         /// <summary>
         /// Creates the feedback.

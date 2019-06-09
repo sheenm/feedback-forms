@@ -5,7 +5,7 @@
     /// </summary>
     public class ServiceResponse<T>
     {
-        public ResponseCodes Code { get;}
+        public ResponseCodes Code { get; }
 
         public string Message { get; }
 

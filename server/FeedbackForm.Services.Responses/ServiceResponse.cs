@@ -41,7 +41,7 @@
         /// Returns Ok
         /// </summary>
         /// <returns>The ok.</returns>
-        public static ServiceResponse Ok ()
+        public static ServiceResponse Ok()
         {
             return new ServiceResponse(
                 ResponseCodes.Ok,

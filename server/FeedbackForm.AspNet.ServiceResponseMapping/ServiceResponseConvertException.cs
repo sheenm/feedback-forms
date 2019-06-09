@@ -10,7 +10,7 @@ namespace FeedbackForm.AspNet.ServiceResponseMapping
     /// </summary>
     public class ServiceResponseConvertException : Exception
     {
-        public ServiceResponseConvertException(): base("Could not convert ServiceResponse to Asp.Net.Core Result")
+        public ServiceResponseConvertException() : base("Could not convert ServiceResponse to Asp.Net.Core Result")
         {
         }
     }

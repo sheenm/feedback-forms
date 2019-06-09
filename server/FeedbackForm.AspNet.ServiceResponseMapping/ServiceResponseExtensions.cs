@@ -13,7 +13,7 @@ namespace FeedbackForm.AspNet.ServiceResponseMapping
         /// </summary>
         /// <returns>The to ASP net core result.</returns>
         /// <param name="response">Response.</param>
-        public static ActionResult MapToAspNetCoreResult (this ServiceResponse response)
+        public static ActionResult MapToAspNetCoreResult(this ServiceResponse response)
         {
             switch (response.Code)
             {
@@ -32,9 +32,9 @@ namespace FeedbackForm.AspNet.ServiceResponseMapping
         /// <returns>The to ASP net core result.</returns>
         /// <param name="response">Response.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        public static ActionResult MapToAspNetCoreResult<T>(this ServiceResponse<T> response) where T: class
+        public static ActionResult MapToAspNetCoreResult<T>(this ServiceResponse<T> response)
         {
-            switch(response.Code)
+            switch (response.Code)
             {
                 case ResponseCodes.Ok:
                     return new OkObjectResult(response.Data);

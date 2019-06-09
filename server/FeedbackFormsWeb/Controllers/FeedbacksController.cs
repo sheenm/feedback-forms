@@ -19,11 +19,11 @@ namespace FeedbackForm.Web.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable>> GetAllFeedbacks() =>
              (await _feedbackService.GetAllFeedbacks())
-				.MapToAspNetCoreResult();
+                .MapToAspNetCoreResult();
 
         [HttpPost]
         public async Task<ActionResult> Post([FromBody]object json) =>
              (await _feedbackService.CreateFeedback(json))
-				.MapToAspNetCoreResult();
+                .MapToAspNetCoreResult();
     }
 }

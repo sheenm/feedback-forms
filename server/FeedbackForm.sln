@@ -45,6 +45,7 @@ Global
 		$0.TextStylePolicy = $2
 		$2.FileWidth = 100
 		$2.scope = text/x-csharp
+		$2.TabsToSpaces = True
 		$0.CSharpFormattingPolicy = $3
 		$3.scope = text/x-csharp
 		$0.StandardHeader = $4
