@@ -1,5 +1,7 @@
+import { Spinner } from '@blueprintjs/core';
 import { IFeedback } from 'app/businessObjects';
 import { ServiceContext } from 'components/providers/ServiceProvider';
+import { useCatchRequestError } from 'hooks/UseCatchRequestError';
 import React from 'react';
 import { FeedbackElement } from './FeedbackElement';
 import { FeedbackFilter } from './FeedbackFilter';
@@ -13,6 +15,9 @@ export const Feedbacks: React.FC = () => {
   const [feedbacks, setFeedbacks] = React.useState<IFeedback[]>([]);
   const { feedbackService } = React.useContext(ServiceContext);
   const [filter, setFilter] = React.useState('');
+  const [isError, setIsError] = React.useState(false);
+
+  const getFeedbacks = useCatchRequestError(() => feedbackService.getAllFeedbacks(), []);
 
   /**
    * On mount load feedbacks
@@ -20,13 +25,20 @@ export const Feedbacks: React.FC = () => {
   React.useEffect(() => {
     let didCancel = false;
 
-    feedbackService.getAllFeedbacks()
-      .then(x => !didCancel && setFeedbacks(x));
+    getFeedbacks()
+      .then(x => !didCancel && setFeedbacks(x))
+      .catch(_ => !didCancel && setIsError(true));
 
     return () => {
       didCancel = true;
     };
-  }, [feedbackService]);
+  }, [getFeedbacks]);
+
+  if (isError)
+    return <p>There's an error occured during request</p>;
+
+  if (feedbacks.length === 0)
+    return <Spinner />;
 
   return <section className={styles.grid}>
     <FeedbackFilter changeFilter={setFilter} />
