@@ -1,4 +1,5 @@
 ﻿using FeedbackForm.Feedbacks.Services;
+using FeedbackForm.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -39,7 +40,10 @@ namespace FeedbackFormWeb
 
         private static void ConfigureDI(IServiceCollection services)
         {
-            services.AddScoped<IFeedbackService, FeedbackService>();
+            // Note that we shouldn't use this logger in production
+            // For example we could use NLog and prodivde it as Adapter to IAppLogger
+            services.AddScoped<IAppLogger, DebugLogger>();
+            services.AddScoped<FeedbackService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

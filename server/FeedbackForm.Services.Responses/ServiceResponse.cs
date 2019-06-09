@@ -76,6 +76,23 @@
             );
         }
 
+        public static ServiceResponse ServerError()
+        {
+            return new ServiceResponse(
+                ResponseCodes.ServerError,
+                ""
+            );
+        }
+
+        public static ServiceResponse<T> ServerError<T>()
+        {
+            return new ServiceResponse<T>(
+                ResponseCodes.ServerError,
+                "",
+                default
+            );
+        }
+
         /// <summary>
         /// Converts string message to BadRequest
         /// </summary>

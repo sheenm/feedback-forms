@@ -11,9 +11,9 @@ namespace FeedbackForm.Web.Controllers
     [Route("api/[controller]")]
     public class FeedbacksController : Controller
     {
-        private readonly IFeedbackService _feedbackService;
+        private readonly FeedbackService _feedbackService;
 
-        public FeedbacksController(IFeedbackService feedbackService)
+        public FeedbacksController(FeedbackService feedbackService)
         {
             _feedbackService = feedbackService;
         }
