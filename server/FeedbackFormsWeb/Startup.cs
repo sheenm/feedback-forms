@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using FeedbackForm.Feedbacks.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -18,9 +19,9 @@ namespace FeedbackFormWeb
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
+		// This method gets called by the runtime. Use this method to add services to the container.
+		public void ConfigureServices(IServiceCollection services)
+		{
             services.AddCors(options =>
             {
                 options.AddPolicy(MyAllowSpecificOrigins,
@@ -31,7 +32,14 @@ namespace FeedbackFormWeb
                 });
             });
 
+            ConfigureDI(services);
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+        }
+
+        private static void ConfigureDI(IServiceCollection services)
+        {
+            services.AddScoped<IFeedbackService, FeedbackService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

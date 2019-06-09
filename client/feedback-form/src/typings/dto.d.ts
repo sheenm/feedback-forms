@@ -22,7 +22,7 @@ declare module 'app/dto' {
    * Provides Dictionary Item Response (server side enums)
    */
   interface IDictionaryItemResponse {
-    key: number | string
+    key: number
     value: string
   }
 }

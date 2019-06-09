@@ -3,6 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedbackForm.Web", "FeedbackFormsWeb\FeedbackForm.Web.csproj", "{6B2E6115-B686-420C-844A-5A4F7258EDB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedbackForm.Feedbacks", "FeedbackForm.Feedbacks\FeedbackForm.Feedbacks.csproj", "{B4FA0154-75F8-4061-9902-C7BA12CA77FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedbackForm.Services.Responses", "FeedbackForm.Services.Responses\FeedbackForm.Services.Responses.csproj", "{D96139FA-1FBD-4A52-B739-6B042E9E83E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedbackForm.AspNet.ServiceResponseMapping", "FeedbackForm.AspNet.ServiceResponseMapping\FeedbackForm.AspNet.ServiceResponseMapping.csproj", "{DF6DD013-6081-4CB2-9D03-3341832A3150}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceResponses", "ServiceResponses", "{579289D6-77FF-44F8-8D4A-D04560FA38E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLogic", "{80FE91B3-DAD9-464F-B8AE-7A8BFAB35E8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{F87D2D69-4187-410B-9F52-05E52A99534A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +25,34 @@ Global
 		{6B2E6115-B686-420C-844A-5A4F7258EDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B2E6115-B686-420C-844A-5A4F7258EDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B2E6115-B686-420C-844A-5A4F7258EDB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4FA0154-75F8-4061-9902-C7BA12CA77FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4FA0154-75F8-4061-9902-C7BA12CA77FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4FA0154-75F8-4061-9902-C7BA12CA77FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4FA0154-75F8-4061-9902-C7BA12CA77FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D96139FA-1FBD-4A52-B739-6B042E9E83E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D96139FA-1FBD-4A52-B739-6B042E9E83E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D96139FA-1FBD-4A52-B739-6B042E9E83E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D96139FA-1FBD-4A52-B739-6B042E9E83E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF6DD013-6081-4CB2-9D03-3341832A3150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6DD013-6081-4CB2-9D03-3341832A3150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6DD013-6081-4CB2-9D03-3341832A3150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6DD013-6081-4CB2-9D03-3341832A3150}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.FileWidth = 100
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+		$0.StandardHeader = $4
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DF6DD013-6081-4CB2-9D03-3341832A3150} = {579289D6-77FF-44F8-8D4A-D04560FA38E2}
+		{D96139FA-1FBD-4A52-B739-6B042E9E83E8} = {579289D6-77FF-44F8-8D4A-D04560FA38E2}
+		{B4FA0154-75F8-4061-9902-C7BA12CA77FE} = {80FE91B3-DAD9-464F-B8AE-7A8BFAB35E8A}
+		{6B2E6115-B686-420C-844A-5A4F7258EDB5} = {F87D2D69-4187-410B-9F52-05E52A99534A}
 	EndGlobalSection
 EndGlobal
