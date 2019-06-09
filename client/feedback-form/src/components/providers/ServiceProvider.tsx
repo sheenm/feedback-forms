@@ -1,5 +1,4 @@
 import React from 'react';
-import { DictionaryService } from 'services/DictionaryService';
 import { FeedbackService } from 'services/FeedbackService';
 
 /**
@@ -9,6 +8,5 @@ import { FeedbackService } from 'services/FeedbackService';
  * ServiceContext.Provider
  */
 export const ServiceContext = React.createContext({
-  dictionaryService: new DictionaryService(),
   feedbackService: new FeedbackService()
 });

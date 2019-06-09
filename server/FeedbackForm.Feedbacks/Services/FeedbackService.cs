@@ -24,7 +24,7 @@ namespace FeedbackForm.Feedbacks.Services
         /// <summary>
         /// Creates the feedback.
         /// </summary>
-        public Task<ServiceResponse> CreateFeedback(object json)
+        public Task<ServiceResponse> CreateFeedback(string json)
         {
             return Task.FromResult(
                 ServiceResponse.Ok()

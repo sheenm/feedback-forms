@@ -16,7 +16,7 @@ namespace FeedbackForm.Feedbacks.Services
         /// 	the structure  of the object aren't handled by server and may change by client
         /// </param>
         /// <returns>The feedback.</returns>
-        Task<ServiceResponse> CreateFeedback(object json);
+        Task<ServiceResponse> CreateFeedback(string json);
 
         /// <summary>
         /// Gets all feedbacks.

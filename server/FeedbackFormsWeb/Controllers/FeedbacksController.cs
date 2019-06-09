@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using FeedbackForm.AspNet.ServiceResponseMapping;
 using FeedbackForm.Feedbacks.Services;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace FeedbackForm.Web.Controllers
 {
@@ -22,8 +24,8 @@ namespace FeedbackForm.Web.Controllers
                 .MapToAspNetCoreResult();
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody]object json) =>
-             (await _feedbackService.CreateFeedback(json))
+        public async Task<ActionResult> Post([FromBody]JObject json) =>
+             (await _feedbackService.CreateFeedback(json.ToString(Formatting.None)))
                 .MapToAspNetCoreResult();
     }
 }

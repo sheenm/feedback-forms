@@ -1,6 +1,5 @@
 import { FormGroup, HTMLSelect } from '@blueprintjs/core';
-import { IDictionaryItem } from 'app/businessObjects';
-import { ServiceContext } from 'components/providers/ServiceProvider';
+import { whatLikesMoreDictionary } from 'dictionaries/WhatLikesMoreDictionary';
 import React from 'react';
 
 interface IProps {
@@ -14,24 +13,6 @@ interface IProps {
  */
 export const WhatLikesMoreSelect: React.FC<IProps> = ({ id, value, onChange }) => {
 
-  const { dictionaryService } = React.useContext(ServiceContext);
-  const [choices, setChoices] = React.useState<IDictionaryItem[]>([]);
-
-  /**
-   * On component mount load options
-   */
-  React.useEffect(() => {
-    let didCancel = false;
-
-    dictionaryService.getWhatLikesMoreDictionary()
-      .then((c) => !didCancel && setChoices(c));
-
-    return () => {
-      didCancel = true;
-    };
-
-  }, [dictionaryService]);
-
   return <FormGroup label='What did you like more?' labelFor={id}>
     <HTMLSelect
       id={id}
@@ -39,13 +20,13 @@ export const WhatLikesMoreSelect: React.FC<IProps> = ({ id, value, onChange }) =
       value={value}
       onChange={(event) => onChange(Number(event.target.value))}
     >
-      {choices.map(x =>
+      {[...whatLikesMoreDictionary.entries()].map(([key, title]) =>
         <option
-          key={x.key}
-          value={x.key}
-          aria-selected={x.key === value}
+          key={key}
+          value={key}
+          aria-selected={key === value}
         >
-          {x.value}
+          {title}
         </option>)}
     </HTMLSelect>
   </FormGroup>;
