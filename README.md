@@ -17,9 +17,9 @@ To start client app:
 To create development database server
 - Create postgres database called `feedback_forms`
 - Create application user
-- run script from ./database_init_scripts/Init.sql
+- run script from `./database_init_scripts/Init.sql`
 
-To perform first 2 steps you copy-paste following script
+To perform first 2 steps you can copy-paste following script
 
 ```sql
 create database feedback_forms;
