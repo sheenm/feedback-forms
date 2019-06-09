@@ -34,6 +34,7 @@ export class FeedbackService {
 
     return response.map(x => ({
       ...x,
+      firstDateSaw: new Date(x.firstDateSaw).toLocaleDateString(),
       whatLikesMore: whatLikesMoreDictionary.get(x.whatLikesMore) || '',
       overallSatisfaction: overallSatisfactionDictionary.get(x.overallSatisfaction) || ''
     }));

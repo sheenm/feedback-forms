@@ -21,6 +21,8 @@ namespace FeedbackForm.AspNet.ServiceResponseMapping
                     return new OkResult();
                 case ResponseCodes.BadRequest:
                     return new BadRequestObjectResult(response.Message);
+                case ResponseCodes.ServerError:
+                    return new StatusCodeResult(500);
                 default:
                     throw new ServiceResponseConvertException();
             }
@@ -40,6 +42,8 @@ namespace FeedbackForm.AspNet.ServiceResponseMapping
                     return new OkObjectResult(response.Data);
                 case ResponseCodes.BadRequest:
                     return new BadRequestObjectResult(response.Message);
+                case ResponseCodes.ServerError:
+                    return new StatusCodeResult(500);
                 default:
                     throw new ServiceResponseConvertException();
             }

@@ -1,15 +1,18 @@
-﻿using FeedbackForm.Feedbacks.Services;
+﻿using FeedbackForm.Feedbacks.Repositories;
+using FeedbackForm.Feedbacks.Services;
+using FeedbackForm.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PostgreRepository;
 
 namespace FeedbackFormWeb
 {
     public class Startup
     {
-        private  string _corsPolicy = "CORS_POLICY";
+        private string _corsPolicy = "CORS_POLICY";
 
         public Startup(IConfiguration configuration)
         {
@@ -37,9 +40,16 @@ namespace FeedbackFormWeb
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
-        private static void ConfigureDI(IServiceCollection services)
+        private void ConfigureDI(IServiceCollection services)
         {
-            services.AddScoped<IFeedbackService, FeedbackService>();
+            // Note that we shouldn't use this logger in production
+            // For example we could use NLog and prodivde it as Adapter to IAppLogger
+            services.AddScoped<IAppLogger, DebugLogger>();
+
+            var connectionString = Configuration.GetConnectionString("DatabaseConnection");
+            services.AddScoped<IFeedbackRepository>(_ => new FeedbackRepository(connectionString));
+
+            services.AddScoped<FeedbackService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

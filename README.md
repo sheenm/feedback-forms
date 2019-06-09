@@ -11,3 +11,19 @@ To start client app:
 - Run `cd client/feedback-form`
 - Download packages via `yarn`
 - Start the app with `yarn start` command
+
+# Without database the server will not work!
+
+To create development database server
+- Create postgres database called `feedback_forms`
+- Create application user
+- run script from ./database_init_scripts/Init.sql
+
+To perform first 2 steps you copy-paste following script
+
+```sql
+create database feedback_forms;
+create role feedbackformuser with login password 'sa_]K8-,dNz-J57M'
+```
+
+If your postgres server is not located on localhost or has diffrent port from 5432 you should also change the connection string from appsettings.development.json

@@ -3,6 +3,6 @@
  * Wariants for what likes more question
  */
 export const whatLikesMoreDictionary = new Map([
-  [1, 'Backend'],
-  [2, 'Frontend']
+  [0, 'Backend'],
+  [1, 'Frontend']
 ]);

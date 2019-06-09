@@ -16,6 +16,10 @@
         /// <summary>
         /// When request parameters were wrong
         /// </summary>
-        BadRequest = 400
+        BadRequest = 400,
+        /// <summary>
+        /// The server error.
+        /// </summary>
+        ServerError = 500,
     }
 }
