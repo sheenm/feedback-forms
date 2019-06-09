@@ -3,6 +3,7 @@ import { InputDate } from 'components/inputs/InputDate';
 import { InputText } from 'components/inputs/InputText';
 import { OverallSatisfiementRadioInput } from 'components/inputs/OverallSatisfiementRadioInput';
 import { WhatLikesMoreSelect } from 'components/inputs/WhatLikesMoreSelect';
+import { NotificationContext } from 'components/providers/NotificationProvider';
 import { ServiceContext } from 'components/providers/ServiceProvider';
 import React, { useReducer } from 'react';
 import { feedbackFormReducer } from './FeedbackFormState';
@@ -12,6 +13,7 @@ import { feedbackFormReducer } from './FeedbackFormState';
  */
 export const FeedbackForm: React.FC = () => {
   const { feedbackService } = React.useContext(ServiceContext);
+  const { showSuccess } = React.useContext(NotificationContext);
 
   const [state, dispatch] = useReducer(feedbackFormReducer, {
     email: '',
@@ -30,6 +32,7 @@ export const FeedbackForm: React.FC = () => {
 
     await feedbackService.createFeedback({ ...state, firstDateSaw: state.firstDateSaw });
 
+    showSuccess('Your feedback saved successfully');
     dispatch({ type: 'RESET' });
   };
 
@@ -68,6 +71,7 @@ export const FeedbackForm: React.FC = () => {
       }}
       value={state.firstDateSaw}
       onChange={changeDate}
+      maxDate={new Date()}
     />
 
     <OverallSatisfiementRadioInput
