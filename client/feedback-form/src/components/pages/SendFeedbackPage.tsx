@@ -1,6 +1,7 @@
 import { RouteComponentProps } from '@reach/router';
 import { IStaticRoute } from 'app/routes';
 import { FeedbackForm } from 'components/feedback/FeedbackForm';
+import { useDocumentTitle } from 'hooks/UseDocumentTitle';
 import React from 'react';
 
 /**
@@ -15,6 +16,8 @@ export const sendFeedbackRoute: IStaticRoute = {
  * Page where users can send their feedback
  */
 export const SendFeedbackPage: React.FC<RouteComponentProps> = () => {
+
+  useDocumentTitle('Send new Feedback - Feedbacks');
 
   return <FeedbackForm />;
 };
