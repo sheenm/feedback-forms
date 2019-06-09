@@ -14,5 +14,6 @@
     <ProjectReference Include="..\FeedbackForm.AspNet.ServiceResponseMapping\FeedbackForm.AspNet.ServiceResponseMapping.csproj" />
     <ProjectReference Include="..\FeedbackForm.Services.Responses\FeedbackForm.Services.Responses.csproj" />
     <ProjectReference Include="..\FeedbackForm.Logging\FeedbackForm.Logging.csproj" />
+    <ProjectReference Include="..\PostgreRepository\PostgreRepository.csproj" />
   </ItemGroup>
 </Project>
