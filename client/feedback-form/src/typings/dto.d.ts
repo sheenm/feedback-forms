@@ -4,6 +4,7 @@ declare module 'app/dto' {
    */
   interface IFeedbacksResponse extends Omit<IFeedbackRequest, 'email' | 'isWantsReceiveNewsletter'> {
     id: string
+    firstDateSaw: 'string'
   }
 
   /**

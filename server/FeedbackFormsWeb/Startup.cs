@@ -9,8 +9,7 @@ namespace FeedbackFormWeb
 {
     public class Startup
     {
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
+        private  string _corsPolicy = "CORS_POLICY";
 
         public Startup(IConfiguration configuration)
         {
@@ -24,11 +23,12 @@ namespace FeedbackFormWeb
         {
             services.AddCors(options =>
             {
-                options.AddPolicy(MyAllowSpecificOrigins,
+                options.AddPolicy(_corsPolicy,
                 builder =>
                 {
-                    builder.WithOrigins("http://example.com",
-                                        "http://www.contoso.com");
+                    builder.AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .WithOrigins("http://localhost:3000");
                 });
             });
 
@@ -54,7 +54,7 @@ namespace FeedbackFormWeb
                 app.UseHsts();
             }
 
-            app.UseCors(MyAllowSpecificOrigins);
+            app.UseCors(_corsPolicy);
 
             app.UseHttpsRedirection();
             app.UseMvc();

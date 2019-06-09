@@ -1,5 +1,9 @@
-import { IFeedback } from "app/businessObjects";
-import { IFeedbackRequest } from "app/dto";
+import { IFeedback } from 'app/businessObjects';
+import { IFeedbackRequest, IFeedbacksResponse } from 'app/dto';
+import { apiEndpoints } from 'config.json';
+import { overallSatisfactionDictionary } from 'dictionaries/OverallSatisfactionDictionary';
+import { whatLikesMoreDictionary } from 'dictionaries/WhatLikesMoreDictionary';
+import { sendGetRequest, sendPostRequest } from './Network';
 
 /**
  * Service which gives you ability to make requests to API
@@ -12,22 +16,8 @@ export class FeedbackService {
    * TODO: lazy loading, we don't have to load all at the same time!
    */
   public getAllFeedbacks(): Promise<IFeedback[]> {
-    return Promise.resolve([
-      {
-        id: '1',
-        nickname: 'Mike',
-        firstDateSaw: new Date().toLocaleDateString(),
-        whatLikesMore: 'Backend',
-        overallSatisfaction: 'Good'
-      },
-      {
-        id: '2',
-        nickname: 'Adam',
-        firstDateSaw: new Date().toLocaleDateString(),
-        whatLikesMore: 'Front',
-        overallSatisfaction: 'Normal'
-      }
-    ]);
+    return sendGetRequest<IFeedbacksResponse[]>(apiEndpoints.feedbacks)
+      .then(this.mapToBusinessObject);
   }
 
   /**
@@ -35,6 +25,17 @@ export class FeedbackService {
    * @param request feedback info
    */
   public createFeedback(request: IFeedbackRequest): Promise<void> {
-    return Promise.resolve();
+    return sendPostRequest(apiEndpoints.feedbacks, request);
+  }
+
+  private mapToBusinessObject(response: IFeedbacksResponse[] | undefined): IFeedback[] {
+    if (response === undefined)
+      return [];
+
+    return response.map(x => ({
+      ...x,
+      whatLikesMore: whatLikesMoreDictionary.get(x.whatLikesMore) || '',
+      overallSatisfaction: overallSatisfactionDictionary.get(x.overallSatisfaction) || ''
+    }));
   }
 }
