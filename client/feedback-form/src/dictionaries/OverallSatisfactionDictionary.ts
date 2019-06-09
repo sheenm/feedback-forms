@@ -3,7 +3,7 @@
  * Variants to overall satisfaction queston
  */
 export const overallSatisfactionDictionary = new Map([
-  [1, 'Bad'],
-  [2, 'Normal'],
-  [3, 'Good']
+  [0, 'Bad'],
+  [1, 'Normal'],
+  [2, 'Good']
 ]);

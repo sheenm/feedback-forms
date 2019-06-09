@@ -6,3 +6,8 @@ CREATE TABLE public.feedbacks (
 	CONSTRAINT feedbacks_pk PRIMARY KEY (id)
 );
 COMMENT ON TABLE public.feedbacks IS 'In this table we will store feedbacks';
+
+GRANT SELECT ON TABLE public.feedbacks TO feedbackformuser;
+GRANT INSERT ON TABLE public.feedbacks TO feedbackformuser;
+GRANT UPDATE ON TABLE public.feedbacks TO feedbackformuser;
+GRANT DELETE ON TABLE public.feedbacks TO feedbackformuser;
