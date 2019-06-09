@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedbackForm.Logging", "Fee
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{0E13D857-8A43-4AE7-8F38-6CE9D276EE5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostgreRepository", "PostgreRepository\PostgreRepository.csproj", "{8AF7B488-41BA-45BC-9269-3AA225A82F80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedbackForm.PostgreRepository", "FeedbackForm.PostgreRepository\FeedbackForm.PostgreRepository.csproj", "{8AF7B488-41BA-45BC-9269-3AA225A82F80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

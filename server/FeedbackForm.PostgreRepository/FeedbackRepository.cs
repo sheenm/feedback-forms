@@ -5,7 +5,7 @@ using FeedbackForm.Feedbacks.Repositories;
 using Newtonsoft.Json.Linq;
 using Npgsql;
 
-namespace PostgreRepository
+namespace FeedbackForm.PostgreRepository
 {
     /// <summary>
     /// Feedback repository implementation for Postgres
