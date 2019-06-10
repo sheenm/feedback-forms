@@ -27,3 +27,9 @@ create role feedbackformuser with login password 'sa_]K8-,dNz-J57M'
 ```
 
 If your postgres server is not located on localhost or has diffrent port from 5432 you should also change the connection string from appsettings.development.json
+
+
+# Troubleshooting
+
+You may also need to set a developer certificate for https and/or change server url in `client/feedback-form/src/config.json`
+based on how did you launch server. I launched the project with Visual Studio For Mac and it worked without any modifications.
